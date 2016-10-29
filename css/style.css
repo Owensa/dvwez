@@ -1,0 +1,152 @@
+footer {
+     text-align: right;
+     position: flex;
+     width: 100%;
+}
+
+#dvwez-social {
+  padding: 0;
+}
+#dvwez-social:after {
+  display: block;
+  font-family: 'Gotham-Book';
+  content: '';
+  margin: 0;
+}
+
+.menu {
+  -webkit-transition: 0.1s transform linear;
+  transition: 0.1s transform linear;
+  position: relative;
+  background: 0;
+  float: left;
+  margin: 2rem;
+  height: 2.7rem;
+  width: 3.5rem;
+  z-index: 1;
+  outline: 0;
+  padding: 0;
+  border: 0;
+}
+
+.bar, .bar::before, .bar::after {
+  -webkit-transition: 0.2s background linear 0.1s, 0.2s top linear 0.2s, 0.2s transform linear;
+  transition: 0.2s background linear 0.1s, 0.2s top linear 0.2s, 0.2s transform linear;
+  position: absolute;
+  background: #000;
+  margin: auto;
+  width: 100%;
+  height: 0.3rem;
+  content: '';
+  top: 50%;
+  left: 0;
+}
+.bar {
+  margin-top: -0.2rem;
+}
+.bar::before {
+  top: -1.2rem;
+}
+.bar::after {
+  top: 1.2rem;
+}
+.bar::before, .bar::after {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+.active .bar {
+  background: 0;
+}
+.active .bar::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.active .bar::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.active .bar::before, .active .bar::after {
+  top: 0;
+}
+.active .bar, .active .bar::before, .active .bar::after {
+  -webkit-transition: 0.2s background linear 0.1s, 0.2s top linear, 0.2s transform linear 0.2s;
+  transition: 0.2s background linear 0.1s, 0.2s top linear, 0.2s transform linear 0.2s;
+}
+header[role="banner"] nav[role="navigation"] a {
+  -webkit-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+}
+
+body {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  background-size: cover;;
+  background-repeat: no-repeat;
+  background-image: url("../images/DVWEZ-delia.png");
+}
+
+header[role="banner"] {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+header[role="banner"] section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 80vh;
+}
+header[role="banner"] section h1 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  font-size: 6rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  width: 100%;
+  text-align: center;
+}
+header[role="banner"] nav[role="navigation"] {
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding: 1em;
+}
+header[role="banner"] nav[role="navigation"] a {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  color: #444;
+  line-height: 1;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+header[role="banner"] nav[role="navigation"] a:hover, header[role="banner"] nav[role="navigation"] a:focus {
+  color: #5BA97E;
+}
+header[role="banner"] nav[role="navigation"] a:first-child {
+  font-size: 1.5rem;
+  font-weight: 800;
+}

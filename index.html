@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DVWEZ</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../js/jquery-ripples/jquery.ripples-min.js"></script>
+    <script src="../js/deploy/parallax/parallax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"></script>
+  </head>
+  <body id="dv">
+         <main role="main">
+       <header role="banner">
+         <nav role="navigation">
+              <!-- add hamburger icon w/ animation and slide down STORE asset on click. -->
+           <button class="js-menu menu" type="button" href="#">
+                <span class="bar"></span>
+        </nav>
+         <section class="animated flipInX">
+              <!-- get the right text or make this an img -->
+           <h1 class="animated flipInX">DVWEZ</a>
+         </section>
+       </header>
+     </main>
+         <script src='http://use.typekit.net/iiw3rdi.js'></script>
+         <script src="js/index.js"></script>
+  </body>
+  <footer>
+       <span id="dvwez-social">
+               <a href="//www.instagram.com/victoriajustice/">
+                 <img src="/images/instagram.png"></a>
+               <a href="//victoriajustice.tumblr.com/">
+                 <img src="/images/tumblr.png"></a>
+               <a href="//www.youtube.com/victoriajustice">
+                 <img src="/images/spotify.png"></a>
+                 <a href="//www.youtube.com/victoriajustice">
+                  <img src="/images/soundcloud.png"></a>
+             </span>
+  </footer>
+  <script>
+  $(document).ready(function() {
+  	try {
+  		$('#dv').ripples({
+  			resolution: 512,
+  			dropRadius: 20, //px
+  			perturbance: 0.04,
+               interactive: false,
+  		});
+  	}
+  	catch (e) {
+  		$('.error').show().text(e);
+  	}
+  	$('.js-ripples-play').on('click', function() {
+  		$('#dv').ripples('play');
+  	});
+  	setInterval(function() {
+  		var $el = $('#dv');
+  		var x = Math.random() * $el.outerWidth();
+  		var y = Math.random() * $el.outerHeight();
+  		var dropRadius = 20;
+  		var strength = 0.01;
+  		$el.ripples('drop', x, y, dropRadius, strength);
+  	}, 100);
+  });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+       	// jQuery Selections
+       	var $html = $('html'),
+       			$container = $('#container'),
+       			$prompt = $('#prompt'),
+       			$toggle = $('#toggle'),
+       			$about = $('#about'),
+       			$scene = $('#scene');
+
+       	// Hide browser menu.
+       	(function() {
+       		setTimeout(function(){window.scrollTo(0,0);},0);
+       	})();
+
+       	// Setup FastClick.
+       	FastClick.attach(document.body);
+
+       	// Add touch functionality.
+       	if (Hammer.HAS_TOUCHEVENTS) {
+       		$container.hammer({drag_lock_to_axis: true});
+       		_.tap($html, 'a,button,[data-tap]');
+       	}
+
+       	// Add touch or mouse class to html element.
+       	$html.addClass(Hammer.HAS_TOUCHEVENTS ? 'touch' : 'mouse');
+
+       	// Resize handler.
+       	(resize = function() {
+       		$scene[0].style.width = window.innerWidth + 'px';
+       		$scene[0].style.height = window.innerHeight + 'px';
+       		if (!$prompt.hasClass('hide')) {
+       			if (window.innerWidth < 600) {
+       				$toggle.addClass('hide');
+       			} else {
+       				$toggle.removeClass('hide');
+       			}
+       		}
+       	})();
+
+       	// Attach window listeners.
+       	window.onresize = _.debounce(resize, 200);
+       	window.onscroll = _.debounce(resize, 200);
+
+       	function showDetails() {
+       		$about.removeClass('hide');
+       		$toggle.removeClass('i');
+       	}
+
+       	function hideDetails() {
+       		$about.addClass('hide');
+       		$toggle.addClass('i');
+       	}
+
+       	// Listen for toggle click event.
+       	$toggle.on('click', function(event) {
+       		$toggle.hasClass('i') ? showDetails() : hideDetails();
+       	});
+
+       	// Pretty simple huh?
+       	$scene.parallax();
+
+       	// Check for orientation support.
+       	setTimeout(function() {
+       		if ($scene.data('mode') === 'cursor') {
+       			$prompt.removeClass('hide');
+       			if (window.innerWidth < 600) $toggle.addClass('hide');
+       			$prompt.on('click', function(event) {
+       				$prompt.addClass('hide');
+       				if (window.innerWidth < 600) {
+       					setTimeout(function() {
+       						$toggle.removeClass('hide');
+       					},1200);
+       				}
+       			});
+       		}
+       	},1000);
+ });
+  </script>
+
+  <script>
+  var isActive = false;
+       $('.js-menu').on('click', function() {
+       	if (isActive) {
+       		$(this).removeClass('active');
+       		$('body').removeClass('menu-open');
+       	} else {
+       		$(this).addClass('active');
+       		$('body').addClass('menu-open');
+       	}
+
+       	isActive = !isActive;
+       });
+  </script>
+</html>
