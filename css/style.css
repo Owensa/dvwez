@@ -1,18 +1,99 @@
-footer {
-     text-align: right;
-     position: flex;
-     width: 100%;
-}
+@font-face {
+  font-family: 'Bodoni 72 Book';
+  src: url("../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Book.eot");
+  src: url("../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Book.woff") format("woff"), url("../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Bodoni 72 Italic';
+  src: url("../fonts/Bodoni 72/BodoniSvtyTwoITCTT-BookIta.eot");
+  src: url("../fonts/Bodoni 72/BodoniSvtyTwoITCTT-BookIta.eot?#iefix") format("embedded-opentype"), url("../fonts/Bodoni 72/BodoniSvtyTwoITCTT-BookIta.woff") format("woff"), url("../fonts/Bodoni 72/BodoniSvtyTwoITCTT-BookIta.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: 'Bodoni 72 Bold';
+  src: url("../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Bold.eot");
+  src: url("../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Bold.woff") format("woff"), url("../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+section a {
+  transition: 0.2s all ease; }
 
-#dvwez-social {
-  padding: 0;
-}
-#dvwez-social:after {
-  display: block;
-  font-family: 'Gotham-Book';
-  content: '';
-  margin: 0;
-}
+body {
+  overflow: hidden;
+  background: blue;
+  background-image: url("../images/DVWEZ-delia.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%; }
+
+nav {
+  width: 60px; }
+
+header {
+  width: 100%;
+  margin-left: 20px;
+  margin-top: 20px;
+  flex: 0 1 auto;
+  position: absolute;
+  top: 0; }
+  header button {
+    height: 80px;
+    width: 80px; }
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  min-height: 100vh; }
+
+section {
+  flex: 0 1 auto;
+  text-align: center;
+  width: 100%;
+  align-self: flex-end; }
+  section h1 {
+    font-family: 'Bodoni 72 Book', sans-serif;
+    line-height: 1.65;
+    font-size: 4.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px; }
+  section a {
+    align-self: center;
+    color: #444;
+    line-height: 1;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 3px; }
+    section a:hover, section a:focus {
+      color: #5BA97E; }
+    section a:first-child {
+      font-size: 1.5rem;
+      font-weight: 800; }
+
+footer {
+  flex: 0 1 auto;
+  align-self: flex-end;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: right;
+  margin-bottom: 20px; }
+  footer #dvwez-social {
+    display: inline-flex;
+    margin-right: 20px; }
+    footer #dvwez-social li {
+      margin-right: 20px; }
+
+small {
+  font-size: 60%; }
 
 .menu {
   -webkit-transition: 0.1s transform linear;
@@ -26,8 +107,7 @@ footer {
   z-index: 1;
   outline: 0;
   padding: 0;
-  border: 0;
-}
+  border: 0; }
 
 .bar, .bar::before, .bar::after {
   -webkit-transition: 0.2s background linear 0.1s, 0.2s top linear 0.2s, 0.2s transform linear;
@@ -39,114 +119,39 @@ footer {
   height: 0.3rem;
   content: '';
   top: 50%;
-  left: 0;
-}
+  left: 0; }
+
 .bar {
-  margin-top: -0.2rem;
-}
+  margin-top: -0.2rem; }
+
 .bar::before {
-  top: -1.2rem;
-}
+  top: -1.2rem; }
+
 .bar::after {
-  top: 1.2rem;
-}
+  top: 1.2rem; }
+
 .bar::before, .bar::after {
   -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
+  transform: rotate(0deg); }
+
 .active .bar {
-  background: 0;
-}
+  background: 0; }
+
 .active .bar::before {
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
+  transform: rotate(45deg); }
+
 .active .bar::after {
   -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
+  transform: rotate(-45deg); }
+
 .active .bar::before, .active .bar::after {
-  top: 0;
-}
+  top: 0; }
+
 .active .bar, .active .bar::before, .active .bar::after {
   -webkit-transition: 0.2s background linear 0.1s, 0.2s top linear, 0.2s transform linear 0.2s;
-  transition: 0.2s background linear 0.1s, 0.2s top linear, 0.2s transform linear 0.2s;
-}
+  transition: 0.2s background linear 0.1s, 0.2s top linear, 0.2s transform linear 0.2s; }
+
 header[role="banner"] nav[role="navigation"] a {
   -webkit-transition: 0.2s all ease;
-  transition: 0.2s all ease;
-}
-
-body {
-  font-family: "proxima-nova", sans-serif;
-  font-size: 1rem;
-  line-height: 1.65;
-  background-size: cover;;
-  background-repeat: no-repeat;
-  background-image: url("../images/DVWEZ-delia.png");
-}
-
-header[role="banner"] {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-header[role="banner"] section {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 80vh;
-}
-header[role="banner"] section h1 {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  font-size: 6rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  width: 100%;
-  text-align: center;
-}
-header[role="banner"] nav[role="navigation"] {
-  -webkit-align-self: flex-start;
-      -ms-flex-item-align: start;
-          align-self: flex-start;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  padding: 1em;
-}
-header[role="banner"] nav[role="navigation"] a {
-  -webkit-align-self: center;
-      -ms-flex-item-align: center;
-          align-self: center;
-  color: #444;
-  line-height: 1;
-  padding: 0 1rem;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 100;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-header[role="banner"] nav[role="navigation"] a:hover, header[role="banner"] nav[role="navigation"] a:focus {
-  color: #5BA97E;
-}
-header[role="banner"] nav[role="navigation"] a:first-child {
-  font-size: 1.5rem;
-  font-weight: 800;
-}
+  transition: 0.2s all ease; }

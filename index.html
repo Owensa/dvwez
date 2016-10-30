@@ -3,72 +3,96 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DVWEZ</title>
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="DVWEZ">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="DVWEZ">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="../js/jquery-ripples/jquery.ripples-min.js"></script>
-    <script src="../js/deploy/parallax/parallax.min.js"></script>
+    <script src="js/jquery-ripples/jquery.ripples-min.js"></script>
+    <script src="js/parallaxjs/parallax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"></script>
   </head>
-  <body id="dv">
-         <main role="main">
-       <header role="banner">
-         <nav role="navigation">
-              <!-- add hamburger icon w/ animation and slide down STORE asset on click. -->
-           <button class="js-menu menu" type="button" href="#">
-                <span class="bar"></span>
-        </nav>
-         <section class="animated flipInX">
-              <!-- get the right text or make this an img -->
-           <h1 class="animated flipInX">DVWEZ</a>
-         </section>
-       </header>
-     </main>
-         <script src='http://use.typekit.net/iiw3rdi.js'></script>
-         <script src="js/index.js"></script>
-  </body>
-  <footer>
-       <span id="dvwez-social">
-               <a href="//www.instagram.com/victoriajustice/">
-                 <img src="/images/instagram.png"></a>
-               <a href="//victoriajustice.tumblr.com/">
-                 <img src="/images/tumblr.png"></a>
-               <a href="//www.youtube.com/victoriajustice">
-                 <img src="/images/spotify.png"></a>
-                 <a href="//www.youtube.com/victoriajustice">
-                  <img src="/images/soundcloud.png"></a>
-             </span>
-  </footer>
-  <script>
-  $(document).ready(function() {
-  	try {
-  		$('#dv').ripples({
-  			resolution: 512,
-  			dropRadius: 20, //px
-  			perturbance: 0.04,
-               interactive: false,
-  		});
-  	}
-  	catch (e) {
-  		$('.error').show().text(e);
-  	}
-  	$('.js-ripples-play').on('click', function() {
-  		$('#dv').ripples('play');
-  	});
-  	setInterval(function() {
-  		var $el = $('#dv');
-  		var x = Math.random() * $el.outerWidth();
-  		var y = Math.random() * $el.outerHeight();
-  		var dropRadius = 20;
-  		var strength = 0.01;
-  		$el.ripples('drop', x, y, dropRadius, strength);
-  	}, 100);
-  });
-  </script>
 
-  <script>
-  $(document).ready(function() {
+  <body id="dv">
+
+    <main role="main">
+
+      <header role="banner">
+        <nav role="navigation">
+          <button class="js-menu menu" type="button" href="#">
+            <span class="bar"></span>
+          </button>
+        </nav>
+      </header>
+
+      <section class="animated flipInX">
+        <h1 class="animated flipInX">DVWEZ</h1>
+      </section>
+
+      <footer>
+        <ul id="dvwez-social">
+          <li><a href="#"><img src="images/instagram.png"></a></li>
+          <li><a href="#"><img src="images/tumblr.png"></a></li>
+          <li><a href="#"><img src="images/spotify.png"></a></li>
+          <li><a href="#"><img src="images/soundcloud.png"></a></li>
+        </ul>
+      </footer>
+    </main>
+
+
+
+    <script>
+      $(document).ready(function() {
+      	try {
+      		$('#dv').ripples({
+      			resolution: 512,
+      			dropRadius: 20, //px
+      			perturbance: 0.04,
+            interactive: false,
+      		});
+      	}
+      	catch (e) {
+      		$('.error').show().text(e);
+      	}
+      	$('.js-ripples-play').on('click', function() {
+      		$('#dv').ripples('play');
+      	});
+      	setInterval(function() {
+      		var $el = $('#dv');
+      		var x = Math.random() * $el.outerWidth();
+      		var y = Math.random() * $el.outerHeight();
+      		var dropRadius = 20;
+      		var strength = 0.01;
+      		$el.ripples('drop', x, y, dropRadius, strength);
+      	}, 100);
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
        	// jQuery Selections
        	var $html = $('html'),
        			$container = $('#container'),
@@ -144,21 +168,21 @@
        			});
        		}
        	},1000);
- });
-  </script>
-
-  <script>
-  var isActive = false;
-       $('.js-menu').on('click', function() {
-       	if (isActive) {
-       		$(this).removeClass('active');
-       		$('body').removeClass('menu-open');
-       	} else {
-       		$(this).addClass('active');
-       		$('body').addClass('menu-open');
-       	}
-
-       	isActive = !isActive;
        });
-  </script>
+    </script>
+    <script>
+      var isActive = false;
+         $('.js-menu').on('click', function() {
+         	if (isActive) {
+         		$(this).removeClass('active');
+         		$('body').removeClass('menu-open');
+         	} else {
+         		$(this).addClass('active');
+         		$('body').addClass('menu-open');
+         	}
+
+         	isActive = !isActive;
+         });
+    </script>
+  </body>
 </html>

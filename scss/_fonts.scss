@@ -1,0 +1,29 @@
+@font-face {
+	font-family: 'Bodoni 72 Book';
+	src: url('../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Book.eot');
+	src: url('../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Book.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Book.woff') format('woff'),
+		url('../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Book.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Bodoni 72 Italic';
+	src: url('../fonts/Bodoni 72/BodoniSvtyTwoITCTT-BookIta.eot');
+	src: url('../fonts/Bodoni 72/BodoniSvtyTwoITCTT-BookIta.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Bodoni 72/BodoniSvtyTwoITCTT-BookIta.woff') format('woff'),
+		url('../fonts/Bodoni 72/BodoniSvtyTwoITCTT-BookIta.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Bodoni 72 Bold';
+	src: url('../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Bold.eot');
+	src: url('../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Bold.woff') format('woff'),
+		url('../fonts/Bodoni 72/BodoniSvtyTwoITCTT-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
